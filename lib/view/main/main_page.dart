@@ -96,6 +96,7 @@ class _MainPageState extends State<MainPage>
         currentIndex: _index,
 
         //아이템 리스트
+<<<<<<< HEAD
         items: navItems.asMap().entries.map((entry) {
           int idx = entry.key;
           var item = entry.value;
@@ -105,6 +106,11 @@ class _MainPageState extends State<MainPage>
             icon: idx == _index
               ? Icon(item.activeIcon, color: Colors.green)
               : Icon(item.activeIcon),
+=======
+        items: navItems.map((item) {
+          return BottomNavigationBarItem(
+            icon: Icon(item.activeIcon),
+>>>>>>> 26585a48e611f29f8283e535ab7aa030a7e21ac9
             label: item.label,
           );
         }).toList(),
