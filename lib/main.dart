@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project/util/index.dart';
-<<<<<<< HEAD
 import 'package:window_manager/window_manager.dart';
 
 void main() async {
@@ -23,10 +22,6 @@ void main() async {
   // 창에 포커스를 맞춰 활성화 상태로 만듬.
   await windowManager.focus();
 
-=======
-
-void main() {
->>>>>>> 26585a48e611f29f8283e535ab7aa030a7e21ac9
   runApp(const MyApp());
 }
 
