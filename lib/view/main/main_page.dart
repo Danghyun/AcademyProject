@@ -59,13 +59,23 @@ class _MainPageState extends State<MainPage>
           // 검색바
           Container(
             margin: const EdgeInsets.only(top: 40, left: 12, right: 70),
-            child: const TextField(
+            child: TextField(
               decoration: InputDecoration(
-                prefixIcon: Icon(Icons.search),
-                suffixIcon: Icon(Icons.clear),
-                labelText: 'Outlined',
-                hintText: 'hint Text',
-                border: OutlineInputBorder(),
+                filled: true,
+                fillColor: Colors.grey,
+
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+
+                suffixIcon: Icon(Icons.mic),
+                hintText: '요리, 재료를 검색해주세요.',
               ),
             ),
           ),
@@ -92,7 +102,9 @@ class _MainPageState extends State<MainPage>
         currentIndex: _index,
         onTap: (int index) {
           //TabController의 animateTo 함수로, index 위치로 화면 전환
-          _tabController.animateTo(index);
+          if(index != _index) {
+            _tabController.animateTo(index);
+          }
         },
         //아이템 리스트
         items: navItems.map((item) {
