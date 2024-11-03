@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:project/util/index.dart';
 import 'package:window_manager/window_manager.dart';
 
-// Fetch 테스트
 
 void main() async {
   // Flutter 에서 앱이 실행되기 전에 필요한 Flutter 엔진 및 위젯 바인딩을 초기화해 주는 역할임.
