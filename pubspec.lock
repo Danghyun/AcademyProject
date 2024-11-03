@@ -75,7 +75,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-<<<<<<< HEAD
   json_annotation:
     dependency: transitive
     description:
@@ -84,8 +83,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.9.0"
-=======
->>>>>>> 26585a48e611f29f8283e535ab7aa030a7e21ac9
   leak_tracker:
     dependency: transitive
     description:
@@ -150,7 +147,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
-<<<<<<< HEAD
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -199,8 +195,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.0"
-=======
->>>>>>> 26585a48e611f29f8283e535ab7aa030a7e21ac9
   sky_engine:
     dependency: transitive
     description: flutter
@@ -270,7 +264,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "14.2.5"
-<<<<<<< HEAD
   window_manager:
     dependency: "direct main"
     description:
@@ -279,8 +272,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.3"
-=======
->>>>>>> 26585a48e611f29f8283e535ab7aa030a7e21ac9
 sdks:
   dart: ">=3.5.1 <4.0.0"
   flutter: ">=3.18.0-18.0.pre.54"

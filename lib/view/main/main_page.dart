@@ -89,28 +89,15 @@ class _MainPageState extends State<MainPage>
         selectedItemColor: Colors.green,
         unselectedItemColor: Colors.black,
         type: BottomNavigationBarType.fixed,
+        currentIndex: _index,
         onTap: (int index) {
           //TabController의 animateTo 함수로, index 위치로 화면 전환
           _tabController.animateTo(index);
         },
-        currentIndex: _index,
-
         //아이템 리스트
-<<<<<<< HEAD
-        items: navItems.asMap().entries.map((entry) {
-          int idx = entry.key;
-          var item = entry.value;
-
-          return BottomNavigationBarItem(
-            // 선택된 인덱스와 현재 아이템의 인덱스가 같다면 아이콘에 누름 효과 제거
-            icon: idx == _index
-              ? Icon(item.activeIcon, color: Colors.green)
-              : Icon(item.activeIcon),
-=======
         items: navItems.map((item) {
           return BottomNavigationBarItem(
             icon: Icon(item.activeIcon),
->>>>>>> 26585a48e611f29f8283e535ab7aa030a7e21ac9
             label: item.label,
           );
         }).toList(),

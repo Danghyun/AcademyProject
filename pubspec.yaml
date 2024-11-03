@@ -30,11 +30,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-<<<<<<< HEAD
-  window_manager: ^0.4.3
-=======
 
->>>>>>> 26585a48e611f29f8283e535ab7aa030a7e21ac9
+  window_manager: ^0.4.3
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
