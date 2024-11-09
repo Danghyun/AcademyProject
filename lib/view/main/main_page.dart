@@ -11,7 +11,7 @@ class MainPage extends StatefulWidget {
   State<MainPage> createState() => _MainPageState();
 }
 
-//SingleTickerProviderStateMixin은 TabController을 이용하기 위해서 사용
+//SingleTickerProviderStateMixin TabController 이용하기 위해서 사용
 class _MainPageState extends State<MainPage>
     with SingleTickerProviderStateMixin {
   // BottomNavigationBar에 나타낼 아이템 인덱스
@@ -53,35 +53,67 @@ class _MainPageState extends State<MainPage>
 
   @override
   Widget build(BuildContext context) {
+    // 화면 width 가져오기
+    final double screenWidth = MediaQuery.of(context).size.width;
+    // 화면 height 가져오기
+    final double screenHeight = MediaQuery.of(context).size.height;
+
+    // 기준 디바이스의 화면 width
+    const double baseScreenWidth = 360;
+    // 기준 디바이스의 화면 height
+    const double baseScreenHeight = 880;
+
+    final double statusBarHeight = MediaQuery.of(context).padding.top;
+    debugPrint("$statusBarHeight");
+
     return Scaffold(
       body: Column(
         children: [
-          // 검색바
-          Container(
-            margin: const EdgeInsets.only(top: 40, left: 12, right: 70),
-            child: TextField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.grey,
-
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-
-                suffixIcon: Icon(Icons.mic),
-                hintText: '요리, 재료를 검색해주세요.',
+          // 상단바
+          Padding(
+            padding: EdgeInsets.only(top: statusBarHeight),
+          ),
+          // 상단바 끝에서 검색바까지의 여백
+          Padding(
+            padding: EdgeInsets.only(top: 13 * (screenHeight / baseScreenHeight)),
+          ),
+          Row(
+            children: [
+              Padding(
+                  padding: EdgeInsets.only(right: 12 * (screenWidth / baseScreenWidth))
               ),
-            ),
+              Expanded(
+                child: SizedBox(
+                  height: 38,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey,
+
+                      enabled: false,
+                      disabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+
+                      suffixIcon: const Icon(Icons.mic),
+                      hintText: '요리, 재료를 검색해주세요.',
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 20 * (screenWidth / baseScreenWidth)),
+              ),
+              const Icon(Icons.bookmark),
+              Padding(
+                padding: EdgeInsets.only(right: 23 * (screenWidth / baseScreenWidth)),
+              )
+            ],
           ),
           Expanded(
             child: TabBarView(
-              //스와이핑으로 화면 전환 방지
+              // 스와이핑으로 화면 전환 방지
               physics: const NeverScrollableScrollPhysics(),
               controller: _tabController,
               children: const [
@@ -95,6 +127,7 @@ class _MainPageState extends State<MainPage>
           ),
         ],
       ),
+      // 하단 네비게이션 바
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.green,
         unselectedItemColor: Colors.black,
