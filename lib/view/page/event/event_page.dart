@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../util/index.dart';
 
 // 홈 페이지
 class EventPage extends StatefulWidget {
